@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap");
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  /* Paleta — Manual de marca, paleta de colores (hex tal cual) */
+  --color-siena-tostado: #A0522D;
+  --color-verde-salvia: #87A96B;
+  --color-alabastro-calido: #F5E6D3;
+  --color-vara-de-oro: #D4A437;
+  --color-rosa-polvoriento: #C47A6D;
+
+  /* Tipografías — Inter primaria, Playfair Display secundaria */
+  --fuente-primaria: "Inter", sans-serif;
+  --fuente-secundaria: "Playfair Display", Georgia, serif;
+
+  /* Inter: Light 300, Regular 400, Medium 500, Bold 700 */
+  --peso-light: 300;
+  --peso-regular: 400;
+  --peso-medium: 500;
+  --peso-bold: 700;
+}
+
+body {
+  font-family: var(--fuente-primaria);
+  font-weight: var(--peso-regular);
+  line-height: 1.6;
+  background-color: var(--color-alabastro-calido);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-secundaria);
+  font-weight: var(--peso-regular);
+  line-height: 1.2;
+  color: var(--color-siena-tostado);
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-weight: var(--peso-bold);
+}
+
+h3 {
+  font-family: var(--fuente-primaria);
+  font-weight: var(--peso-medium);
+}
+
+p {
+  font-family: var(--fuente-primaria);
+  font-weight: var(--peso-regular);
+  line-height: 1.6;
+}
