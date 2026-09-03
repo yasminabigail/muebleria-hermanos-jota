@@ -23,6 +23,10 @@ img {
   --color-vara-de-oro: #D4A437;
   --color-rosa-polvoriento: #C47A6D;
 
+  /* Texto base — no especificado en el manual, elegido para combinar con la paleta cálida */
+  --color-texto: #2B2420;
+  --color-texto-suave: #5C5348;
+
   /* Tipografías — Inter primaria, Playfair Display secundaria */
   --fuente-primaria: "Inter", sans-serif;
   --fuente-secundaria: "Playfair Display", Georgia, serif;
@@ -38,6 +42,7 @@ body {
   font-family: var(--fuente-primaria);
   font-weight: var(--peso-regular);
   line-height: 1.6;
+  color: var(--color-texto);
   background-color: var(--color-alabastro-calido);
 }
 
@@ -68,6 +73,7 @@ p {
   font-family: var(--fuente-primaria);
   font-weight: var(--peso-regular);
   line-height: 1.6;
+  color: var(--color-texto);
 }
 
 /* Header + nav */
