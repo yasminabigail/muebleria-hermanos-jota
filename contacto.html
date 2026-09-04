@@ -32,7 +32,29 @@
             </nav>
         </div>
     </header>
-    <main></main>
+    <main>
+        <section class="contact">
+            <div class="contact__inner">
+                <h1 class="contact__title">Escribinos</h1>
+                <p class="contact__intro">Contanos tu consulta y te respondemos a la brevedad.</p>
+                <form class="contact__form" action="#" method="post">
+                    <div class="contact__field">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                    </div>
+                    <div class="contact__field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="contact__field">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
 <footer class="site-footer">
     <div class="site-footer__inner">
         <div class="site-footer__brand">

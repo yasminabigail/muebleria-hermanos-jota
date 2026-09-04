@@ -26,6 +26,7 @@ img {
   /* Texto base — no especificado en el manual, elegido para combinar con la paleta cálida */
   --color-texto: #2B2420;
   --color-texto-suave: #5C5348;
+  --color-superficie: #ffffff;
 
   /* Tipografías — Inter primaria, Playfair Display secundaria */
   --fuente-primaria: "Inter", sans-serif;
@@ -244,7 +245,8 @@ p {
 }
 
 .btn--secondary:hover {
-  background-color: var(--color-siena-tostado);
+  background-color: var(--color-rosa-polvoriento);
+  border-color: var(--color-rosa-polvoriento);
   color: var(--color-alabastro-calido);
 }
 
@@ -295,10 +297,11 @@ p {
 
 /* Product card */
 .product-card {
-  background-color: #fff;
+  background-color: var(--color-superficie);
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(160, 82, 45, 0.1);
+  border-bottom: 3px solid var(--color-rosa-polvoriento);
 }
 
 .product-card__img {
@@ -434,7 +437,7 @@ p {
   font-size: 1rem;
   border: 1px solid var(--color-siena-tostado);
   border-radius: 2px;
-  background-color: #fff;
+  background-color: var(--color-superficie);
   color: var(--color-texto);
 }
 
