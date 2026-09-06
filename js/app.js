@@ -46,6 +46,7 @@
 					<button type="button" data-cart-action="decrease" data-product-id="${product.id}" aria-label="Restar ${product.nombre}">-</button>
 					<span>${quantity}</span>
 					<button type="button" data-cart-action="increase" data-product-id="${product.id}" aria-label="Sumar ${product.nombre}">+</button>
+					<button type="button" data-cart-action="remove" data-product-id="${product.id}" aria-label="Eliminar ${product.nombre}">Eliminar</button>
 				</div>
 			`;
 			cartItems.appendChild(item);
@@ -82,6 +83,12 @@
 		if (!item) return;
 		item.quantity += amount;
 		const updatedCart = cart.filter((cartItem) => cartItem.quantity > 0);
+		saveCart(updatedCart);
+		updateCart(products);
+	};
+
+	const removeFromCart = (productId, products) => {
+		const updatedCart = getCart().filter((item) => item.id !== productId);
 		saveCart(updatedCart);
 		updateCart(products);
 	};
@@ -145,15 +152,8 @@
 	};
 
 	const setupCart = (products) => {
-		const headerInner = document.querySelector(".site-header__inner");
-		if (!headerInner) return;
-		const cartToggle = document.createElement("button");
-		cartToggle.type = "button";
-		cartToggle.id = "cart-toggle";
-		cartToggle.className = "cart-toggle";
-		cartToggle.setAttribute("aria-label", "Abrir carrito");
-		cartToggle.textContent = "Carrito";
-		headerInner.appendChild(cartToggle);
+		const cartToggle = document.querySelector("#cart-toggle-btn");
+		if (!cartToggle) return;
 
 		const sidebar = document.createElement("aside");
 		sidebar.id = "cart-sidebar";
@@ -165,11 +165,21 @@
 			<div class="cart-sidebar__total"><span>Total</span><strong id="cart-total">$ 0</strong></div>
 		`;
 		document.body.appendChild(sidebar);
-		cartToggle.addEventListener("click", () => sidebar.classList.toggle("cart-sidebar--open"));
-		sidebar.querySelector("#cart-close").addEventListener("click", () => sidebar.classList.remove("cart-sidebar--open"));
+		const closeCart = () => {
+			sidebar.classList.remove("cart-sidebar--open");
+			cartToggle.setAttribute("aria-expanded", "false");
+		};
+		cartToggle.addEventListener("click", () => {
+			const isOpen = sidebar.classList.toggle("cart-sidebar--open");
+			cartToggle.setAttribute("aria-expanded", String(isOpen));
+		});
+		sidebar.querySelector("#cart-close").addEventListener("click", closeCart);
 		sidebar.addEventListener("click", (event) => {
 			const button = event.target.closest("[data-cart-action]");
-			if (button) changeQuantity(Number(button.dataset.productId), button.dataset.cartAction === "increase" ? 1 : -1, products);
+			if (!button) return;
+			const productId = Number(button.dataset.productId);
+			if (button.dataset.cartAction === "remove") removeFromCart(productId, products);
+			else changeQuantity(productId, button.dataset.cartAction === "increase" ? 1 : -1, products);
 		});
 		updateCart(products);
 	};

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto — Mueblería Hermanos Jota</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__inner">
             <a class="logo" href="index.html">
-                <img src="img/logo.svg" alt="Hermanos Jota">
+                <img src="img/logo.svg" alt="Logotipo de Mueblería Hermanos Jota">
             </a>
             <button type="button" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
                 <span class="nav-toggle__bar"></span>
@@ -30,56 +30,71 @@
                     </li>
                 </ul>
             </nav>
+            <button type="button" id="cart-toggle-btn" class="cart" aria-label="Ver carrito" aria-controls="cart-sidebar" aria-expanded="false">
+    <svg class="cart__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13L5.4 5M7 13l-1.5 6h11M9 21a1 1 0 100-2 1 1 0 000 2zM18 21a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="cart__count" id="carrito-contador">0</span>
+</button>
         </div>
     </header>
     <main>
-        <section class="contact">
+        <section class="contact" aria-labelledby="contacto-titulo">
             <div class="contact__inner">
-                <h1 class="contact__title">Escribinos</h1>
-                <p class="contact__intro">Contanos tu consulta y te respondemos a la brevedad.</p>
-                <form class="contact__form" action="#" method="post">
-                    <div class="contact__field">
+                <h1 id="contacto-titulo" class="contact__title">Hablemos como en el taller</h1>
+                <p class="contact__intro">Somos asesores de confianza: te escuchamos, te contamos de maderas y oficios, y te ayudamos a elegir la pieza que va a vivir con vos. Si podés, visitanos en la Casa Taller: el café está listo y las puertas abiertas en San Cristóbal.</p>
+                <p class="contact__intro">Escribinos con calma. No hay consulta chica cuando se trata de un mueble que va a durar décadas.</p>
+
+                <form action="#" method="post" class="contact-form">
+                    <div class="contact-form__field">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" autocomplete="name" required>
                     </div>
-                    <div class="contact__field">
-                        <label for="email">Email</label>
+                    <div class="contact-form__field">
+                        <label for="email">Correo electrónico</label>
                         <input type="email" id="email" name="email" autocomplete="email" required>
                     </div>
-                    <div class="contact__field">
+                    <div class="contact-form__field">
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn--primary">Enviar</button>
+                    <button type="submit" class="btn btn--primary btn--large">Enviar mensaje</button>
                 </form>
             </div>
         </section>
     </main>
-<footer class="site-footer">
-    <div class="site-footer__inner">
-        <div class="site-footer__brand">
-            <img src="img/logo.svg" alt="Hermanos Jota" class="site-footer__logo">
-            <p class="site-footer__tagline">Redescubrir el arte de vivir</p>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <section class="site-footer__col" aria-labelledby="footer-direccion">
+                <h2 id="footer-direccion" class="site-footer__heading">Dirección</h2>
+                <address class="site-footer__address">
+                    Mueblería Hermanos Jota<br>
+                    Av. San Juan 2847, C1232AAB<br>
+                    San Cristóbal, CABA, Argentina
+                </address>
+            </section>
+            <section class="site-footer__col" aria-labelledby="footer-horarios">
+                <h2 id="footer-horarios" class="site-footer__heading">Horarios</h2>
+                <p>Lunes a viernes: 10:00 – 19:00</p>
+                <p>Sábados: 10:00 – 14:00</p>
+            </section>
+            <section class="site-footer__col" aria-labelledby="footer-contacto">
+                <h2 id="footer-contacto" class="site-footer__heading">Contacto</h2>
+                <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+                <p><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></p>
+                <p>WhatsApp: <a href="https://wa.me/541145678900" rel="noopener noreferrer">+54 11 4567-8900</a> · <a href="tel:+541145678900">Llamar</a></p>
+            </section>
+            <nav class="site-footer__col" aria-label="Redes sociales">
+                <h2 class="site-footer__heading">Redes sociales</h2>
+                <ul class="site-footer__social">
+                    <li><a href="https://www.instagram.com/hermanosjota_ba/" rel="noopener noreferrer" aria-label="Instagram de Hermanos Jota">@hermanosjota_ba</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <div class="site-footer__col">
-            <h3 class="site-footer__heading">Contacto</h3>
-            <p>Av. San Juan 2847, San Cristóbal, CABA</p>
-            <p>Lun a Vie 10:00 a 19:00 | Sáb 10:00 a 14:00</p>
-            <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+        <div class="site-footer__bottom">
+            <p>&copy; 2026 Hermanos Jota. Todos los derechos reservados.</p>
         </div>
-
-        <div class="site-footer__col">
-            <h3 class="site-footer__heading">Seguinos</h3>
-            <p><a href="https://instagram.com/hermanosjota_ba" target="_blank" rel="noopener">Instagram @hermanosjota_ba</a></p>
-            <p><a href="https://wa.me/5491145678900" target="_blank" rel="noopener">WhatsApp +54 11 4567-8900</a></p>
-        </div>
-    </div>
-
-    <div class="site-footer__bottom">
-        <p>&copy; 2026 Hermanos Jota. Todos los derechos reservados.</p>
-    </div>
-</footer>
+    </footer>
     <script src="js/datos.js"></script>
     <script src="js/app.js"></script>
 </body>

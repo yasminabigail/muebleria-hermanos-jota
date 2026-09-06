@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Productos — Mueblería Hermanos Jota</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__inner">
             <a class="logo" href="index.html">
-                <img src="img/logo.svg" alt="Hermanos Jota">
+                <img src="img/logo.svg" alt="Logotipo de Mueblería Hermanos Jota">
             </a>
             <button type="button" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
                 <span class="nav-toggle__bar"></span>
@@ -30,6 +30,12 @@
                     </li>
                 </ul>
             </nav>
+            <button type="button" id="cart-toggle-btn" class="cart" aria-label="Ver carrito" aria-controls="cart-sidebar" aria-expanded="false">
+    <svg class="cart__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13L5.4 5M7 13l-1.5 6h11M9 21a1 1 0 100-2 1 1 0 000 2zM18 21a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="cart__count" id="carrito-contador">0</span>
+</button>
         </div>
     </header>
     <main>
@@ -44,138 +50,140 @@
         <div class="catalog__inner">
 
             <div class="catalog__search">
-                <input type="search" id="search-input" name="search" class="catalog__search-input" placeholder="Buscar producto..." aria-label="Buscar producto">
             </div>
+        </section>
 
             <div class="catalog__grid" id="catalog-grid">
 
-                <article class="product-card">
-                    <img src="img/aparador-uspallata.png" alt="Aparador Uspallata" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Aparador Uspallata</h3>
-                        <p class="product-card__desc">Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
+                <div class="catalog__search">
+                    <input type="search" class="catalog__search-input" placeholder="Buscar producto..." aria-label="Buscar producto">
+                </div>
 
-                <article class="product-card">
-                    <img src="img/biblioteca-recoleta.png" alt="Biblioteca Recoleta" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Biblioteca Recoleta</h3>
-                        <p class="product-card__desc">Sistema modular de estantes abierto que combina estructura de acero Sage Green y repisas en roble claro.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/butaca-mendoza.png" alt="Butaca Mendoza" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Butaca Mendoza</h3>
-                        <p class="product-card__desc">Butaca tapizada en bouclé Dusty Rose con base de madera de guatambú.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/sillon-copacabana.png" alt="Sillón Copacabana" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Sillón Copacabana</h3>
-                        <p class="product-card__desc">Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/mesa-centro-araucaria.png" alt="Mesa de Centro Araucaria" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Mesa de Centro Araucaria</h3>
-                        <p class="product-card__desc">Mesa de centro con sobre circular de mármol Patagonia y base de tres patas en madera de nogal.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/mesa-noche-aconcagua.png" alt="Mesa de Noche Aconcagua" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Mesa de Noche Aconcagua</h3>
-                        <p class="product-card__desc">Mesa de noche con cajón oculto y repisa inferior en roble certificado FSC®.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/sofa-patagonia.png" alt="Sofá Patagonia" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Sofá Patagonia</h3>
-                        <p class="product-card__desc">Sofá de tres cuerpos tapizado en lino Warm Alabaster con patas cónicas de madera.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/mesa-comedor-pampa.png" alt="Mesa Comedor Pampa" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Mesa Comedor Pampa</h3>
-                        <p class="product-card__desc">Mesa extensible de roble macizo con tablero biselado y sistema de apertura suave.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/sillas-cordoba.png" alt="Sillas Córdoba" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Sillas Córdoba</h3>
-                        <p class="product-card__desc">Set de cuatro sillas apilables en contrachapado moldeado de nogal y estructura tubular Sage Green.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/escritorio-costa.png" alt="Escritorio Costa" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Escritorio Costa</h3>
-                        <p class="product-card__desc">Escritorio compacto con cajón organizado y tapa pasacables integrada en bambú laminado.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="img/silla-trabajo-belgrano.png" alt="Silla de Trabajo Belgrano" class="product-card__img">
-                    <div class="product-card__body">
-                        <h3 class="product-card__title">Silla de Trabajo Belgrano</h3>
-                        <p class="product-card__desc">Silla ergonómica regulable en altura con respaldo de malla transpirable y tejido reciclado.</p>
-                        <a href="producto.html" class="btn btn--secondary">Ver más</a>
-                    </div>
-                </article>
-
+                <div class="catalog__grid">
+                    <article class="product-card">
+                        <img src="img/aparador-uspallata.png" alt="Aparador Uspallata" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Aparador Uspallata</h3>
+                            <p class="product-card__desc">Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/biblioteca-recoleta.png" alt="Biblioteca Recoleta" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Biblioteca Recoleta</h3>
+                            <p class="product-card__desc">Sistema modular de estantes abierto que combina estructura de acero Sage Green y repisas en roble claro.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/butaca-mendoza.png" alt="Butaca Mendoza" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Butaca Mendoza</h3>
+                            <p class="product-card__desc">Butaca tapizada en bouclé Dusty Rose con base de madera de guatambú.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/sillon-copacabana.png" alt="Sillón Copacabana" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Sillón Copacabana</h3>
+                            <p class="product-card__desc">Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/mesa-centro-araucaria.png" alt="Mesa de Centro Araucaria" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Mesa de Centro Araucaria</h3>
+                            <p class="product-card__desc">Mesa de centro con sobre circular de mármol Patagonia y base de tres patas en madera de nogal.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/mesa-noche-aconcagua.png" alt="Mesa de Noche Aconcagua" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Mesa de Noche Aconcagua</h3>
+                            <p class="product-card__desc">Mesa de noche con cajón oculto y repisa inferior en roble certificado FSC®.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/sofa-patagonia.png" alt="Sofá Patagonia" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Sofá Patagonia</h3>
+                            <p class="product-card__desc">Sofá de tres cuerpos tapizado en lino Warm Alabaster con patas cónicas de madera.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/mesa-comedor-pampa.png" alt="Mesa Comedor Pampa" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Mesa Comedor Pampa</h3>
+                            <p class="product-card__desc">Mesa extensible de roble macizo con tablero biselado y sistema de apertura suave.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/sillas-cordoba.png" alt="Sillas Córdoba" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Sillas Córdoba</h3>
+                            <p class="product-card__desc">Set de cuatro sillas apilables en contrachapado moldeado de nogal y estructura tubular Sage Green.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/escritorio-costa.png" alt="Escritorio Costa" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Escritorio Costa</h3>
+                            <p class="product-card__desc">Escritorio compacto con cajón organizado y tapa pasacables integrada en bambú laminado.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/silla-trabajo-belgrano.png" alt="Silla de Trabajo Belgrano" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Silla de Trabajo Belgrano</h3>
+                            <p class="product-card__desc">Silla ergonómica regulable en altura con respaldo de malla transpirable y tejido reciclado.</p>
+                            <a href="producto.html" class="btn btn--secondary">Ver más</a>
+                        </div>
+                    </article>
+                </div>
             </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <section class="site-footer__col" aria-labelledby="footer-direccion">
+                <h2 id="footer-direccion" class="site-footer__heading">Dirección</h2>
+                <address class="site-footer__address">
+                    Mueblería Hermanos Jota<br>
+                    Av. San Juan 2847, C1232AAB<br>
+                    San Cristóbal, CABA, Argentina
+                </address>
+            </section>
+            <section class="site-footer__col" aria-labelledby="footer-horarios">
+                <h2 id="footer-horarios" class="site-footer__heading">Horarios</h2>
+                <p>Lunes a viernes: 10:00 – 19:00</p>
+                <p>Sábados: 10:00 – 14:00</p>
+            </section>
+            <section class="site-footer__col" aria-labelledby="footer-contacto">
+                <h2 id="footer-contacto" class="site-footer__heading">Contacto</h2>
+                <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+                <p><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></p>
+                <p>WhatsApp: <a href="https://wa.me/541145678900" rel="noopener noreferrer">+54 11 4567-8900</a> · <a href="tel:+541145678900">Llamar</a></p>
+            </section>
+            <nav class="site-footer__col" aria-label="Redes sociales">
+                <h2 class="site-footer__heading">Redes sociales</h2>
+                <ul class="site-footer__social">
+                    <li><a href="https://www.instagram.com/hermanosjota_ba/" rel="noopener noreferrer" aria-label="Instagram de Hermanos Jota">@hermanosjota_ba</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
-</main>
-<footer class="site-footer">
-    <div class="site-footer__inner">
-        <div class="site-footer__brand">
-            <img src="img/logo.svg" alt="Hermanos Jota" class="site-footer__logo">
-            <p class="site-footer__tagline">Redescubrir el arte de vivir</p>
+        <div class="site-footer__bottom">
+            <p>&copy; 2026 Hermanos Jota. Todos los derechos reservados.</p>
         </div>
-
-        <div class="site-footer__col">
-            <h3 class="site-footer__heading">Contacto</h3>
-            <p>Av. San Juan 2847, San Cristóbal, CABA</p>
-            <p>Lun a Vie 10:00 a 19:00 | Sáb 10:00 a 14:00</p>
-            <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
-        </div>
-
-        <div class="site-footer__col">
-            <h3 class="site-footer__heading">Seguinos</h3>
-            <p><a href="https://instagram.com/hermanosjota_ba" target="_blank" rel="noopener">Instagram @hermanosjota_ba</a></p>
-            <p><a href="https://wa.me/5491145678900" target="_blank" rel="noopener">WhatsApp +54 11 4567-8900</a></p>
-        </div>
-    </div>
-    <div class="site-footer__bottom">
-        <p>&copy; 2026 Hermanos Jota. Todos los derechos reservados.</p>
-    </div>
-</footer>
+    </footer>
     <script src="js/datos.js"></script>
     <script src="js/app.js"></script>
 </body>
