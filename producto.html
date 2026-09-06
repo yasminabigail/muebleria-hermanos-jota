@@ -30,7 +30,7 @@
                     </li>
                 </ul>
             </nav>
-            <button type="button" class="cart" aria-label="Ver carrito">
+            <button type="button" id="cart-toggle-btn" class="cart" aria-label="Ver carrito" aria-controls="cart-sidebar" aria-expanded="false">
     <svg class="cart__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13L5.4 5M7 13l-1.5 6h11M9 21a1 1 0 100-2 1 1 0 000 2zM18 21a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -39,43 +39,22 @@
         </div>
     </header>
     <main>
-        <section class="product-detail">
+        <article class="product-detail">
             <div class="product-detail__inner">
-                <div class="product-detail__gallery">
-                    <img src="img/sillon-copacabana.png" alt="Sillón Copacabana de respaldo envolvente, tapizado cálido y patas de madera" class="product-detail__img">
-                </div>
+                <img
+                    id="product-detail-img"
+                    class="product-detail__img"
+                    src="img/aparador-uspallata.png"
+                    alt="Aparador Uspallata de seis puertas en nogal sostenible con tiradores metálicos en acabado latón"
+                >
                 <div class="product-detail__info">
-                    <h1 class="product-detail__title">Sillón Copacabana</h1>
-                    <p class="product-detail__price">$ 680.000</p>
-                    <p class="product-detail__desc">Pieza de descanso con respaldo envolvente y líneas propias del taller: madera noble a la vista, tapizado cálido y una escala pensada para el living. El Sillón Copacabana se siente cercano, sólido y hecho para acompañar el ritmo de la casa durante años.</p>
-
-                    <dl class="product-detail__specs">
-                        <div class="product-detail__spec">
-                            <dt>Medidas</dt>
-                            <dd>90 × 85 × 95 cm</dd>
-                        </div>
-                        <div class="product-detail__spec">
-                            <dt>Materiales</dt>
-                            <dd>Cuero curtido vegetal, acero pintado</dd>
-                        </div>
-                        <div class="product-detail__spec">
-                            <dt>Acabado</dt>
-                            <dd>Cuero anilina premium</dd>
-                        </div>
-                        <div class="product-detail__spec">
-                            <dt>Rotación</dt>
-                            <dd>360° silenciosa y suave</dd>
-                        </div>
-                        <div class="product-detail__spec">
-                            <dt>Garantía</dt>
-                            <dd>10 años en estructura</dd>
-                        </div>
-                    </dl>
-
-                    <button type="button" class="btn btn--primary btn--large">Añadir al Carrito</button>
+                    <h1 id="product-detail-title" class="product-detail__title">Aparador Uspallata</h1>
+                    <p id="product-detail-price" class="product-detail__price">$ 450.000</p>
+                    <p id="product-detail-desc" class="product-detail__desc">Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Un molde estático listo para que JavaScript reemplace imagen, título, precio y descripción.</p>
+                    <button type="button" id="product-detail-add" class="btn btn--primary">Agregar al carrito</button>
                 </div>
             </div>
-        </section>
+        </article>
     </main>
     <footer class="site-footer">
         <div class="site-footer__inner">
