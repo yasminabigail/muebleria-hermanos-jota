@@ -63,8 +63,16 @@
 		cartTotal.textContent = currency.format(total);
 	};
 
+	const updateCartBadge = () => {
+		const badge = document.querySelector("#carrito-contador");
+		if (!badge) return;
+		const totalQuantity = getCart().reduce((sum, item) => sum + item.quantity, 0);
+		badge.textContent = totalQuantity;
+	};
+
 	const updateCart = (products) => {
 		renderCart(products);
+		updateCartBadge();
 	};
 
 	const addToCart = (product, products) => {
