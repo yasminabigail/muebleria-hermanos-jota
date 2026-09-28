@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto — Mueblería Hermanos Jota</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="logo" href="index.html">
+                <img src="img/logo.svg" alt="Logotipo de Mueblería Hermanos Jota">
+            </a>
+            <button type="button" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <nav class="nav" id="menu-principal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link nav__link--active" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="button" id="cart-toggle-btn" class="cart" aria-label="Ver carrito" aria-controls="cart-sidebar" aria-expanded="false">
+    <svg class="cart__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13L5.4 5M7 13l-1.5 6h11M9 21a1 1 0 100-2 1 1 0 000 2zM18 21a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="cart__count" id="carrito-contador">0</span>
+</button>
+        </div>
+    </header>
+    <main>
+        <article class="product-detail">
+            <div class="product-detail__inner">
+                <img
+                    id="product-detail-img"
+                    class="product-detail__img"
+                    src="img/aparador-uspallata.png"
+                    alt="Aparador Uspallata de seis puertas en nogal sostenible con tiradores metálicos en acabado latón"
+                >
+                <div class="product-detail__info">
+                    <h1 id="product-detail-title" class="product-detail__title">Aparador Uspallata</h1>
+                    <p id="product-detail-price" class="product-detail__price">$ 450.000</p>
+                    <p id="product-detail-desc" class="product-detail__desc">Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Un molde estático listo para que JavaScript reemplace imagen, título, precio y descripción.</p>
+                    <button type="button" id="product-detail-add" class="btn btn--primary">Agregar al carrito</button>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <section class="site-footer__col" aria-labelledby="footer-direccion">
+                <h2 id="footer-direccion" class="site-footer__heading">Dirección</h2>
+                <address class="site-footer__address">
+                    Mueblería Hermanos Jota<br>
+                    Av. San Juan 2847, C1232AAB<br>
+                    San Cristóbal, CABA, Argentina
+                </address>
+            </section>
+            <section class="site-footer__col" aria-labelledby="footer-horarios">
+                <h2 id="footer-horarios" class="site-footer__heading">Horarios</h2>
+                <p>Lunes a viernes: 10:00 – 19:00</p>
+                <p>Sábados: 10:00 – 14:00</p>
+            </section>
+            <section class="site-footer__col" aria-labelledby="footer-contacto">
+                <h2 id="footer-contacto" class="site-footer__heading">Contacto</h2>
+                <p><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+                <p><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></p>
+                <p>WhatsApp: <a href="https://wa.me/541145678900" rel="noopener noreferrer">+54 11 4567-8900</a> · <a href="tel:+541145678900">Llamar</a></p>
+            </section>
+            <nav class="site-footer__col" aria-label="Redes sociales">
+                <h2 class="site-footer__heading">Redes sociales</h2>
+                <ul class="site-footer__social">
+                    <li><a href="https://www.instagram.com/hermanosjota_ba/" rel="noopener noreferrer" aria-label="Instagram de Hermanos Jota">@hermanosjota_ba</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="site-footer__bottom">
+            <p>&copy; 2026 Hermanos Jota. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/datos.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
