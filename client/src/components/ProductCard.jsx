@@ -1,8 +1,10 @@
-function ProductCard({ producto, onVerDetalle, onAgregarAlCarrito, moneda }) {
+function ProductCard({ producto, onSelectProduct, onAddToCart, currency }) {
+  const imageSource = producto.imagen.startsWith('/') ? producto.imagen : `/${producto.imagen}`
+
   return (
     <article className="product-card">
       <img
-        src={producto.imagen}
+        src={imageSource}
         alt={producto.nombre}
         className="product-card__img"
       />
@@ -11,17 +13,17 @@ function ProductCard({ producto, onVerDetalle, onAgregarAlCarrito, moneda }) {
         <h3 className="product-card__title">{producto.nombre}</h3>
         <p className="product-card__desc">{producto.descripcion}</p>
         <div className="product-card__footer">
-          <p className="product-card__price">{moneda.format(producto.precio)}</p>
+          <p className="product-card__price">{currency.format(producto.precio)}</p>
           <div className="product-card__actions">
             <button
               className="btn btn--secondary"
-              onClick={() => onVerDetalle(producto)}
+              onClick={() => onSelectProduct(producto)}
             >
               Ver más
             </button>
             <button
               className="btn btn--primary"
-              onClick={() => onAgregarAlCarrito(producto)}
+              onClick={() => onAddToCart(producto)}
             >
               Agregar
             </button>

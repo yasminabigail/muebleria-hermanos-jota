@@ -1,15 +1,40 @@
+import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard.jsx'
 
-function ProductList({
-  productos,
-  loading,
-  error,
-  busqueda,
-  onBusquedaChange,
-  onVerDetalle,
-  onAgregarAlCarrito,
-  moneda
-}) {
+function ProductList({ onSelectProduct, onAddToCart, currency }) {
+  const [productos, setProductos] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        setLoading(true)
+        setError('')
+        const response = await fetch('http://localhost:3000/api/productos')
+        if (!response.ok) {
+          throw new Error('No se pudieron cargar los productos.')
+        }
+        const data = await response.json()
+        setProductos(data)
+      } catch (fetchError) {
+        setError(fetchError.message || 'No se pudieron cargar los productos.')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadProducts()
+  }, [])
+
+  const filteredProducts = productos.filter((producto) => {
+    const normalizedSearch = searchTerm.trim().toLowerCase()
+    return !normalizedSearch
+      || producto.nombre.toLowerCase().includes(normalizedSearch)
+      || producto.categoria.toLowerCase().includes(normalizedSearch)
+  })
+
   return (
     <>
       <section className="page-header">
@@ -29,26 +54,29 @@ function ProductList({
               className="catalog__search-input"
               placeholder="Buscar producto..."
               aria-label="Buscar producto"
-              value={busqueda}
-              onChange={(e) => onBusquedaChange(e.target.value)}
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
             />
           </div>
 
           {loading ? (
-            <p>Cargando productos...</p>
+            <div className="loading-state" role="status" aria-live="polite">
+              <span className="loading-state__spinner" aria-hidden="true" />
+              <span>Cargando productos...</span>
+            </div>
           ) : error ? (
             <p className="error-message">Error: {error}</p>
-          ) : productos.length === 0 ? (
+          ) : filteredProducts.length === 0 ? (
             <p>No se encontraron productos que coincidan con la búsqueda.</p>
           ) : (
             <div className="catalog__grid">
-              {productos.map(producto => (
+              {filteredProducts.map((producto) => (
                 <ProductCard
                   key={producto.id}
                   producto={producto}
-                  onVerDetalle={onVerDetalle}
-                  onAgregarAlCarrito={onAgregarAlCarrito}
-                  moneda={moneda}
+                  onSelectProduct={onSelectProduct}
+                  onAddToCart={onAddToCart}
+                  currency={currency}
                 />
               ))}
             </div>

@@ -1,20 +1,10 @@
 import { useState } from 'react'
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    mensaje: ''
-  })
+  const [nombre, setNombre] = useState('')
+  const [email, setEmail] = useState('')
+  const [mensaje, setMensaje] = useState('')
   const [enviado, setEnviado] = useState(false)
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -57,8 +47,8 @@ function ContactForm() {
               name="nombre"
               autoComplete="name"
               required
-              value={formData.nombre}
-              onChange={handleChange}
+              value={nombre}
+              onChange={(event) => setNombre(event.target.value)}
             />
           </div>
 
@@ -70,8 +60,8 @@ function ContactForm() {
               name="email"
               autoComplete="email"
               required
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
             />
           </div>
 
@@ -82,8 +72,8 @@ function ContactForm() {
               name="mensaje"
               rows="6"
               required
-              value={formData.mensaje}
-              onChange={handleChange}
+              value={mensaje}
+              onChange={(event) => setMensaje(event.target.value)}
             />
           </div>
 
