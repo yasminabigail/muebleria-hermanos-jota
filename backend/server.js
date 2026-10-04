@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const logger = require("./middleware/logger");
 const productosRouter = require("./routes/productos");
 
@@ -6,6 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middlewares globales
+app.use(cors());
 app.use(express.json());
 app.use(logger);
 
